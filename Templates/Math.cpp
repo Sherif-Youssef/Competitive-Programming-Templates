@@ -223,7 +223,6 @@ struct XorBasis
 };
 
 
-
 ll maxHistogramArea(vll v)
 {
     vll st;
@@ -298,6 +297,7 @@ struct RunningMedian
 };
 
 
+// Linear Algebra
 ld dis(ld x1, ld y1, ld x2, ld y2)
 {
     return sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));

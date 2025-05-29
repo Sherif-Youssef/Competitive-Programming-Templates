@@ -37,6 +37,7 @@ struct DSU
             swap(a, b);
         par[b] = a;
         sz[a] += sz[b];
+        comps--;
         return true;
     }
 };

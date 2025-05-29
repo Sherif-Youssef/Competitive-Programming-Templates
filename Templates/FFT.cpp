@@ -34,18 +34,18 @@ const ll N = 2e5 + 1, MX = 1e1, MOD = 1e9 + 7, INF = 1e18, PI = acos(-1);
 struct FFT
 {
     typedef complex<double> cd;
-
+ 
     static void fft(vector<cd> &a, bool invert) 
     {
         int n = a.size();
-
+ 
         for (int i = 1, j = 0; i < n; i++) 
         {
             int bit = n >> 1;
             for (; j & bit; bit >>= 1)
                 j ^= bit;
             j ^= bit;
-
+ 
             if (i < j)
                 swap(a[i], a[j]);
         }
@@ -65,7 +65,7 @@ struct FFT
                 }
             }
         }
-
+ 
         if (invert) 
         {
             for (auto &x: a)
@@ -105,6 +105,8 @@ struct FFT
         res = multiply(res, res);
         if (p & 1)
             res = multiply(res, v);
+        for (auto &e: res)
+            e = min(e, 1ll);
         return res;
     }
 };
